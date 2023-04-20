@@ -1,0 +1,14 @@
+{
+    "name": "socket-io-express-app",
+    "version": "1.0.0",
+    "description": "A simple Socket.io and Express app",
+    "main": "app.js",
+    "type": "module",
+    "dependencies": {
+      "express": "^4.17.1",
+      "express-handlebars": "^5.3.2",
+      "http": "0.0.1-security",
+      "socket.io": "^4.2.0"
+    }
+  }
+  
