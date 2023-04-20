@@ -11,7 +11,7 @@ const deleteProduct = (id, products) => {
   }
 };
 
-module.exports = {
+export default {
   addProduct,
   deleteProduct
 };
