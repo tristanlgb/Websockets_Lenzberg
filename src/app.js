@@ -22,24 +22,24 @@ app.get('/realtimeproducts', (req, res) => {
 });
 
 io.on('connection', (socket) => {io.on('connection', (socket) => {
-    console.log('client connected');
+    console.log('cliente conectado');
   
-    socket.emit('products', products);
+    socket.emit('productos', products);
   
-    socket.on('disconnect', () => {
-      console.log('client disconnected');
+    socket.on('desconectado', () => {
+      console.log('cliente desconectado');
     });
   
-    socket.on('newProduct', (product) => {
+    socket.on('nuevoProducto', (product) => {
       products.push(product);
-      socket.emit('products', products);
+      socket.emit('productos', products);
     });
   
-    socket.on('deleteProduct', (product) => {
+    socket.on('eliminarProducto', (product) => {
       const index = products.findIndex(p => p.id === product.id);
       if (index !== -1) {
         products.splice(index, 1);
-        socket.emit('products', products);
+        socket.emit('productos', products);
       }
     });
   });
@@ -47,4 +47,4 @@ io.on('connection', (socket) => {io.on('connection', (socket) => {
 
 
 const PORT = process.env.PORT || 8080;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`el server funciona en el puerto  ${PORT}`));
